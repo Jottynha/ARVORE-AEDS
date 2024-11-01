@@ -1,4 +1,4 @@
-#include "tree.hpp"
+#include "treeT1.hpp"
 
 
 Node::Node(int val) : data(val), left(nullptr), right(nullptr) {}

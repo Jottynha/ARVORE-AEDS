@@ -1,8 +1,15 @@
 <div align="center">
    
 # ÁRVORE BINÁRIA E SUAS IMPLICAÇÕES 🌳
-   
+
+![Static Badge](https://img.shields.io/badge/C%2B%2B-blue?style=flat&logo=C%2B%2B)
+![Static Badge](https://img.shields.io/badge/Ubuntu-orange?style=flat&logo=ubuntu)
+
 </div>
+
+<p align="justify">
+Esse é o repositório de um trabalho individual, proposto em sala de aula, da disciplina de Algoritmos e Estruturas de Dados II, ministrada no Campus Divinópolis do CEFET-MG pelo professor Michel Pires Da Silva. Aqui, desenvolvi arquivos que manipulam diferentes modelos da estrutura de dados de árvores para discutir as questões propostas pelo professor.
+</p>
 
 ## Introdução 📝
 <div align="center">

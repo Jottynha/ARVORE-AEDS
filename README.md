@@ -7,7 +7,7 @@
 ## Introdução 📝
 <div align="center">
    
-![TF-IDF](https://www.pngwing.com/pt/free-png-nqglw)
+![TF-IDF](https://www.ime.usp.br/~pf/algoritmos/aulas/png-from-tex/arvore-binaria-letras.png)
 
 </div>
 

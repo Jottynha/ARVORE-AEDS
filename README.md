@@ -53,6 +53,94 @@ O desbalanceamento de uma árvore binária afeta diretamente o comprimento do ca
 
 As árvores binárias de busca (BSTs) são estruturas de dados eficientes para armazenamento e pesquisa de elementos. No entanto, à medida que novas palavras são inseridas, a árvore pode se tornar desbalanceada, resultando em operações com complexidade linear O(n) no pior caso. Para mitigar esse problema, diversas técnicas de otimização podem ser implementadas. Abaixo estão algumas dessas técnicas, incluindo o uso de árvores balanceadas, além de métodos de compactação e armazenamento que minimizam o uso de memória.
 
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Análise de Eficiência do Autocompletar em Árvores Binárias</h1>
+    <h2>1. Estrutura de Dados e Funcionamento do Autocompletar</h2>
+    <p>A árvore binária de busca organiza as palavras de forma que cada nó possui um valor (neste caso, uma palavra), com o nó à esquerda sendo menor e o nó à direita sendo maior. O autocompletar funciona da seguinte maneira:</p>
+    <ul>
+        <li>Quando um prefixo é fornecido, a árvore é percorrida a partir da raiz até encontrar a posição onde o prefixo poderia ser inserido.</li>
+        <li>A busca é feita para encontrar o primeiro nó que comece com o prefixo desejado.</li>
+        <li>Após encontrar o nó correspondente, a árvore é percorrida em ordem para coletar todas as palavras que começam com o prefixo.</li>
+    </ul>
+    <h2>2. Análise de Complexidade</h2>
+    <p>A eficiência do autocompletar em uma BST é influenciada pela altura da árvore, que pode variar dependendo da forma como os dados são inseridos. Vamos analisar as seguintes situações:</p>
+    <h3>a. Melhor Caso</h3>
+    <p><strong>Árvore Balanceada:</strong> Quando a árvore está balanceada (ex: AVL ou Red-Black), a altura da árvore é <code>O(log n)</code>, onde <code>n</code> é o número de palavras.</p>
+    <p><strong>Tempo de Busca:</strong> O tempo de busca para encontrar o nó inicial com o prefixo é <code>O(log n)</code> e a coleta de palavras que começam com o prefixo é <code>O(k)</code>, onde <code>k</code> é o número de palavras que atendem ao critério.</p>
+    <h3>b. Pior Caso</h3>
+    <p><strong>Árvore Desbalanceada:</strong> Se a árvore se tornar desbalanceada (ex: inserindo palavras em ordem crescente), a altura pode chegar a <code>O(n)</code>.</p>
+    <p><strong>Tempo de Busca:</strong> Nesse caso, o tempo de busca para encontrar o nó inicial com o prefixo se torna <code>O(n)</code> e a coleta de palavras que começam com o prefixo continua em <code>O(k)</code>.</p>
+    <h2>3. Análise Comparativa</h2>
+    <h3>a. Tamanho do Dicionário e Tempo de Busca</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tamanho do Dicionário (<code>n</code>)</th>
+                <th>Melhor Caso (<code>O(log n)</code>)</th>
+                <th>Pior Caso (<code>O(n)</code>)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100</td>
+                <td>~7</td>
+                <td>~100</td>
+            </tr>
+            <tr>
+                <td>1.000</td>
+                <td>~10</td>
+                <td>~1.000</td>
+            </tr>
+            <tr>
+                <td>10.000</td>
+                <td>~14</td>
+                <td>~10.000</td>
+            </tr>
+            <tr>
+                <td>100.000</td>
+                <td>~17</td>
+                <td>~100.000</td>
+            </tr>
+            <tr>
+                <td>1.000.000</td>
+                <td>~20</td>
+                <td>~1.000.000</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li><strong>Desempenho em Grande Escala:</strong> Para grandes volumes de dados, a eficiência da árvore binária de busca pode ser comprometida se a árvore não for balanceada. Estruturas de dados mais sofisticadas, como árvores AVL ou Red-Black, podem ser preferíveis para garantir um desempenho consistente.</li>
+        <li><strong>Impacto do Balanceamento:</strong> A implementação de técnicas de balanceamento é crucial em aplicações onde o desempenho do autocompletar é essencial, pois a experiência do usuário pode ser severamente impactada por tempos de resposta lentos.</li>
+        <li><strong>Alternativas:</strong> Outras estruturas de dados, como tries (árvores prefixadas), podem oferecer desempenho superior para operações de autocompletar, especialmente em casos onde o volume de dados é muito grande e onde o prefixo é frequentemente buscado.</li>
+    </ul>
+    
+    <p>A escolha entre utilizar uma árvore binária de busca ou outra estrutura de dados depende dos requisitos específicos da aplicação, volume de dados e a necessidade de operações rápidas de autocompletar.</p>
+
+
 ### Árvores AVL
 
 As **árvores AVL** são um tipo de árvore binária de busca que mantém um equilíbrio estrito. A diferença de altura entre as subárvores esquerda e direita de qualquer nó é, no máximo, 1. Essa propriedade garante que as operações de busca, inserção e remoção sejam realizadas em tempo O(log n).

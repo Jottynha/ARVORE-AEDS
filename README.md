@@ -1,9 +1,17 @@
-# ÁRVORE BINÁRIA
+<div align="center">
+   
+# ÁRVORE BINÁRIA E SUAS IMPLICAÇÕES
+   
+</div>
 
+## Introdução 📝
+<div align="center">
+   
+![TF-IDF](https://www.pngwing.com/pt/free-png-nqglw)
 
----
+</div>
 
-## Problema 2: Impacto do Desbalanceamento no Comprimento do Caminho
+## Problema 2: Impacto do Desbalanceamento no Comprimento do Caminho 🛠️
 
 O desbalanceamento de uma árvore binária afeta diretamente o comprimento do caminho mais longo da raiz até uma folha. Esse caminho é o nível máximo da árvore (ou sua altura).
 
@@ -36,7 +44,7 @@ Aqui está um exemplo de como você pode formatar a seção do README para o Pro
 
 ---
 
-## Problema 3: Otimização de Árvores Binárias de Busca
+## Problema 3: Otimização de Árvores Binárias de Busca 🛠️
 
 As árvores binárias de busca (BSTs) são estruturas de dados eficientes para armazenamento e pesquisa de elementos. No entanto, à medida que novas palavras são inseridas, a árvore pode se tornar desbalanceada, resultando em operações com complexidade linear \(O(n)\) no pior caso. Para mitigar esse problema, diversas técnicas de otimização podem ser implementadas. Abaixo estão algumas dessas técnicas, incluindo o uso de árvores balanceadas, além de métodos de compactação e armazenamento que minimizam o uso de memória.
 

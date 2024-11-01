@@ -20,7 +20,7 @@
         th {
             background-color: #f4f4f4;
         }
-    </style>
+</style>
     
 <div align="center">
 
@@ -136,7 +136,6 @@ As árvores binárias de busca (BSTs) são estruturas de dados eficientes para a
         <li><strong>Impacto do Balanceamento:</strong> A implementação de técnicas de balanceamento é crucial em aplicações onde o desempenho do autocompletar é essencial, pois a experiência do usuário pode ser severamente impactada por tempos de resposta lentos.</li>
         <li><strong>Alternativas:</strong> Outras estruturas de dados, como tries (árvores prefixadas), podem oferecer desempenho superior para operações de autocompletar, especialmente em casos onde o volume de dados é muito grande e onde o prefixo é frequentemente buscado.</li>
     </ul>
-    
     <p>A escolha entre utilizar uma árvore binária de busca ou outra estrutura de dados depende dos requisitos específicos da aplicação, volume de dados e a necessidade de operações rápidas de autocompletar.</p>
 
 

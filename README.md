@@ -1,4 +1,28 @@
-
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+</style>
+</head>
     
 <div align="center">
 
@@ -55,29 +79,6 @@ O desbalanceamento de uma árvore binária afeta diretamente o comprimento do ca
 
 As árvores binárias de busca (BSTs) são estruturas de dados eficientes para armazenamento e pesquisa de elementos. No entanto, à medida que novas palavras são inseridas, a árvore pode se tornar desbalanceada, resultando em operações com complexidade linear O(n) no pior caso. Para mitigar esse problema, diversas técnicas de otimização podem ser implementadas. Abaixo estão algumas dessas técnicas, incluindo o uso de árvores balanceadas, além de métodos de compactação e armazenamento que minimizam o uso de memória.
 
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2, h3, h4 {
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-</style>
 <body>
     <h2>1. Estrutura de Dados e Funcionamento do Autocompletar</h2>
     <p>A árvore binária de busca organiza as palavras de forma que cada nó possui um valor (neste caso, uma palavra), com o nó à esquerda sendo menor e o nó à direita sendo maior. O autocompletar funciona da seguinte maneira:</p>

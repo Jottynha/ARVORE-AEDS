@@ -31,6 +31,18 @@ Esse é o repositório de um trabalho individual, proposto em sala de aula, da d
 <h3>Problema 3: Desenvolvimento de um Dicionário Eletrônico</h3>
 <p>Os participantes devem projetar uma estrutura de dados eficiente para um dicionário eletrônico, que permita buscas rápidas e autocompletar sugestões conforme o usuário digita. Será necessário discutir as limitações das árvores binárias de busca em termos de desbalanceamento e propor otimizações, como o uso de árvores balanceadas, para garantir eficiência mesmo com grandes volumes de dados. Testes deverão ser elaborados para simular o uso do dicionário, avaliando o tempo de resposta para diferentes volumes de dados.</p>
 
+## Descrição do Código 📖
+**Estrutura dos Arquivos**:  
+   - `ARVORE.pdf`: Arquivo PDF que contém as resoluções manuscritas do Problema 1.
+   - `numeros.txt`: Arquivo para depositar números para teste realizado no arquivo Python.
+   - `dataset/words.txt`: Arquivo para depositar o dicionário de palavras utilizados no Problema 3.
+   - `main.py`: Arquivo para validar caminhamento, inserções e remoções para o Problema 1.
+   - `src/treeT1.hpp`: Arquivo cabeçalho para a árvore binária utilizada no Problema 2.
+   - `src/treeT1.cpp`: Arquivo com as declarações das funções utilizadas para manipular o primeiro modelo de árvore binária.
+   - `src/treeT2.hpp`: Arquivo cabeçalho para a árvore binária utilizada no Problema 3.
+   - `src/treeT2.cpp`: Arquivo com as declarações das funções utilizadas para manipular o segundo modelo de árvore binária.
+   - `src/main.cpp`: Arquivo principal que coordena os demais arquivos, com a escolha do Problema desejado para análise.
+
 ## Problema 2: Impacto do Desbalanceamento no Comprimento do Caminho 🛠️
 
 O desbalanceamento de uma árvore binária afeta diretamente o comprimento do caminho mais longo da raiz até uma folha. Esse caminho é o nível máximo da árvore (ou sua altura).

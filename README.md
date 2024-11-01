@@ -7,7 +7,7 @@
 ## Introdução 📝
 <div align="center">
    
-![TF-IDF](https://www.ime.usp.br/~pf/algoritmos/aulas/png-from-tex/arvore-binaria-letras.png)
+![TREE](https://joaoarthurbm.github.io/eda/posts/bst/bst1.png)
 
 </div>
 

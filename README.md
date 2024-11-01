@@ -32,4 +32,40 @@ O desbalanceamento de uma árvore binária afeta diretamente o comprimento do ca
    - O desbalanceamento da árvore resulta em uma "depreciação" da eficiência conforme mais nós são adicionados. À medida que a altura da árvore cresce linearmente (em uma árvore desbalanceada), as operações tornam-se significativamente mais lentas. Esse aumento na altura pode gerar uma degradação de aproximadamente 39% no desempenho em comparação com uma árvore mais organizada e equilibrada.
    - A árvore balanceada, por sua vez, não sofre desse efeito com a mesma intensidade, já que sua altura cresce logaritmicamente, mantendo um desempenho aceitável conforme novos nós são inseridos.
 
- 
+Aqui está um exemplo de como você pode formatar a seção do README para o Problema 3, discutindo técnicas de otimização para árvores binárias de busca:
+
+---
+
+## Problema 3: Otimização de Árvores Binárias de Busca
+
+As árvores binárias de busca (BSTs) são estruturas de dados eficientes para armazenamento e pesquisa de elementos. No entanto, à medida que novas palavras são inseridas, a árvore pode se tornar desbalanceada, resultando em operações com complexidade linear \(O(n)\) no pior caso. Para mitigar esse problema, diversas técnicas de otimização podem ser implementadas. Abaixo estão algumas dessas técnicas, incluindo o uso de árvores balanceadas, além de métodos de compactação e armazenamento que minimizam o uso de memória.
+
+### Árvores AVL
+
+As **árvores AVL** são um tipo de árvore binária de busca que mantém um equilíbrio estrito. A diferença de altura entre as subárvores esquerda e direita de qualquer nó é, no máximo, 1. Essa propriedade garante que as operações de busca, inserção e remoção sejam realizadas em tempo \(O(\log n)\).
+
+- **Rotação**: Quando uma inserção ou remoção causa um desbalanceamento, a árvore AVL aplica rotações (simples ou duplas) para restaurar o equilíbrio.
+- **Uso**: Ideal para aplicações onde as operações de busca são frequentes e as inserções/remoções são menos comuns, pois o custo de manter o balanceamento pode ser alto em cenários de alta inserção.
+
+### Árvores Rubro-Negra
+
+As **árvores rubro-negras** são outra forma de árvore balanceada que mantém propriedades específicas:
+
+- Cada nó é colorido de vermelho ou preto, e a árvore respeita regras de coloração que garantem um caminho mais curto da raiz até as folhas.
+- Assim como as AVL, as operações de busca, inserção e remoção também são realizadas em tempo \(O(\log n)\).
+- **Flexibilidade**: Elas são geralmente mais eficientes que as AVL em cenários onde há muitas inserções e remoções, pois permitem um maior fator de desbalanceamento.
+
+### Métodos de Compactação e Armazenamento
+
+Além de manter o balanceamento, é importante considerar o uso eficiente da memória. Aqui estão algumas técnicas que podem ser aplicadas:
+
+- **Representação Compacta**: Utilize estruturas de dados como tabelas de hash ou tries, que podem oferecer uma compactação intrínseca de palavras, especialmente para conjuntos de dados que compartilham prefixos comuns.
+- **Codificação**: Empregue técnicas de codificação como Huffman ou LZW para armazenar palavras de forma compacta, reduzindo o uso de memória ao evitar a duplicação de informações.
+- **Árvores Persistentes**: Permitem manter versões anteriores da árvore após cada operação de modificação. Essa abordagem é útil em cenários onde o histórico das mudanças é necessário e pode ajudar a economizar espaço, permitindo acesso eficiente a diferentes versões de dados.
+- **Armazenamento em Disco**: Para conjuntos de dados muito grandes, considere o uso de estruturas como árvores B ou B+ que são otimizadas para acesso em disco. Elas minimizam o número de acessos a disco ao armazenar múltiplos valores em cada nó.
+- **Alocação de Memória Dinâmica**: Utilize estruturas de alocação de memória como pools para reduzir a sobrecarga de alocação e liberação de memória, garantindo que o gerenciamento de memória seja eficiente e rápido.
+
+A utilização de árvores balanceadas, como AVL e rubro-negras, é uma abordagem eficaz para garantir a eficiência de operações em árvores binárias de busca, mesmo quando grandes volumes de dados são inseridos. Além disso, técnicas de compactação e armazenamento, como representações compactas e estruturas de dados externas, podem ajudar a minimizar o uso de memória sem comprometer o desempenho. Implementar essas estratégias pode resultar em um sistema de armazenamento de dados mais robusto e eficiente, adequado para aplicações em grande escala.
+
+---
+

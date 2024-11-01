@@ -18,6 +18,8 @@ Esse é o repositório de um trabalho individual, proposto em sala de aula, da d
    
 ![TREE](https://joaoarthurbm.github.io/eda/posts/bst/bst1.png)
 
+</div>
+
 <p>Este documento aborda uma série de desafios práticos e teóricos relacionados à manipulação e análise de árvores binárias. Cada problema foi projetado para explorar conceitos fundamentais, como inserção, remoção, pesquisa e caminhamento em árvores binárias de busca, além de oferecer uma compreensão profunda sobre a estrutura e o funcionamento dessas árvores. Os problemas incluem a construção de árvores a partir de conjuntos de dados, análise do impacto das remoções na estrutura da árvore, e a implementação de funções para calcular a profundidade máxima e sugerir otimizações. Além disso, o desenvolvimento de um dicionário eletrônico baseado em árvores binárias de busca será discutido, com foco em desempenho e eficiência. Através desses exercícios, os usuários poderão aprimorar suas habilidades em estruturas de dados e algoritmos, além de compreender melhor as aplicações práticas das árvores binárias em programação.</p>
 
 <h3>Problema 1: Construção e Análise de Árvores Binárias</h3>
@@ -28,8 +30,6 @@ Esse é o repositório de um trabalho individual, proposto em sala de aula, da d
 
 <h3>Problema 3: Desenvolvimento de um Dicionário Eletrônico</h3>
 <p>Os participantes devem projetar uma estrutura de dados eficiente para um dicionário eletrônico, que permita buscas rápidas e autocompletar sugestões conforme o usuário digita. Será necessário discutir as limitações das árvores binárias de busca em termos de desbalanceamento e propor otimizações, como o uso de árvores balanceadas, para garantir eficiência mesmo com grandes volumes de dados. Testes deverão ser elaborados para simular o uso do dicionário, avaliando o tempo de resposta para diferentes volumes de dados.</p>
-
-</div>
 
 ## Problema 2: Impacto do Desbalanceamento no Comprimento do Caminho 🛠️
 

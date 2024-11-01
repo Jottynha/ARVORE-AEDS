@@ -3,7 +3,7 @@
 
 ---
 
-## Impacto do Desbalanceamento no Comprimento do Caminho
+## Problema 2: Impacto do Desbalanceamento no Comprimento do Caminho
 
 O desbalanceamento de uma árvore binária afeta diretamente o comprimento do caminho mais longo da raiz até uma folha. Esse caminho é o nível máximo da árvore (ou sua altura).
 

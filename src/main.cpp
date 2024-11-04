@@ -26,12 +26,13 @@ void executarProblema2() {
 
     char choice;
     while (true) {
-        cout << "\nMenu Problema 2:\n";
+        cout << "\n[ MENU PROBLEMA 2: ]\n";
         cout << "1 - Inserir nó na árvore desbalanceada\n";
         cout << "2 - Remover nó da árvore desbalanceada\n";
         cout << "3 - Inserir nó na árvore equilibrada\n";
         cout << "4 - Remover nó da árvore equilibrada\n";
         cout << "5 - Comparar as duas árvores\n";
+        cout << "6 - Sugerir rotações para a árvore desbalanceada\n";
         cout << "0 - Voltar ao menu principal\n";
         cout << "Escolha uma opção: ";
         cin >> choice;
@@ -69,6 +70,10 @@ void executarProblema2() {
             case '5':
                 compareTrees(unbalancedTree, balancedTree);
                 break;
+            case '6':
+                cout << "Sugestões de rotações para reduzir a profundidade da árvore desbalanceada:\n";
+                sugerirRotacoes(unbalancedTree);
+                break;
             default:
                 cout << "Opção inválida. Tente novamente.\n";
                 break;
@@ -79,13 +84,20 @@ void executarProblema2() {
 void executarProblema3() {
     BST tree;
     loadWordsFromFile(tree, "dataset/words.txt");
+    srand(static_cast<unsigned int>(time(0))); // Para gerar números aleatórios
+    vector<int> testVolumes = {100, 1000, 5000, 10000};
+    ifstream file("dataset/words.txt");
+    string word;
 
     int choice;
     do {
-        cout << "\nMenu Problema 3:\n";
+        
+        cout << "\n[ MENU PROBLEMA 3: ]\n";
         cout << "1 - Buscar uma palavra\n";
         cout << "2 - Autocompletar\n";
-        cout << "3 - Voltar ao menu principal\n";
+        cout << "3 - Teste com Palavras Aleatórias\n";
+        cout << "4 - Exibir Dicionário\n";
+        cout << "5 - Voltar ao menu principal\n";
         cout << "Escolha uma opção: ";
         cin >> choice;
 
@@ -94,11 +106,15 @@ void executarProblema3() {
                 string word;
                 cout << "Digite a palavra para buscar: ";
                 cin >> word;
+                auto start = high_resolution_clock::now();
                 if (tree.search(word)) {
                     cout << word << " foi encontrada no dicionário." << endl;
                 } else {
                     cout << word << " não foi encontrada no dicionário." << endl;
                 }
+                auto end = high_resolution_clock::now();
+                auto insertionDuration = duration_cast<milliseconds>(end - start);
+                cout << "Tempo de busca para a palavra [" << word << "]:" << insertionDuration.count() << " ms" << endl;
                 break;
             }
             case 2: {
@@ -117,35 +133,52 @@ void executarProblema3() {
                 break;
             }
             case 3:
+                for (int volume : testVolumes) {
+                    cout << "\nTestando volume de dados: " << volume << endl;
+                    testBSTPerformance(volume);
+                }
+                break;
+            case 4:
+                if (!file.is_open()) {
+                    cerr << "Erro ao abrir o arquivo do Dicionário " << endl;
+                    return;
+                }
+                cout << "[ CONTEÚDO DO DICIONÁRIO ]: " << endl;
+                while (file >> word) {
+                    cout << word << endl; 
+                }
+                break;
+            case 5:
                 cout << "Voltando ao menu principal...\n";
                 break;
             default:
                 cout << "Opção inválida, tente novamente." << endl;
         }
-    } while (choice != 3);
+    } while (choice != 5);
+    file.close();
 }
 
 int main() {
     int escolha;
 
     while (true) {
-        cout << "\nMenu Principal:\n";
-        cout << "1 - Problema 2 (árvore com Node)\n";
-        cout << "2 - Problema 3 (árvore com No)\n";
-        cout << "0 - Sair\n";
+        cout << "\n[ MENU PRINCIPAL: ]\n";
+        cout << "1 - SAIR\n";
+        cout << "2 - [PROBLEMA 2 (árvore com inteiro)]\n";
+        cout << "3 - [PROBLEMA 3 (árvore com palavras)]\n";
         cout << "Digite sua escolha: ";
         cin >> escolha;
 
         switch (escolha) {
             case 1:
-                executarProblema2();
-                break;
-            case 2:
-                executarProblema3();
-                break;
-            case 0:
                 cout << "Saindo do programa...\n";
                 return 0;
+            case 2:
+                executarProblema2();
+                break;
+            case 3:
+                executarProblema3();
+                break;
             default:
                 cout << "Opção inválida. Tente novamente.\n";
         }

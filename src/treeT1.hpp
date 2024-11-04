@@ -23,5 +23,6 @@ int calculateMaxLevel(Node* root);// CALCULAR NIVEL
 void findLongestPath(Node* root, vector<int>& path, vector<int>& longestPath);
 void displayMaxLevelAndPath(Node* root);
 void compareTrees(Node* unbalancedTree, Node* balancedTree); // COMPARAR ÁRVORES
+void sugerirRotacoes(Node* node);
 
 #endif

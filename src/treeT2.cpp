@@ -85,3 +85,53 @@ void loadWordsFromFile(BST& tree, const string& filename) {
     }
     file.close();
 }
+
+vector<string> generateRandomWords(int numWords) {
+    vector<string> words;
+    const string characters = "abcdefghijklmnopqrstuvwxyz";
+    for (int i = 0; i < numWords; i++) {
+        string word;
+        int wordLength = rand() % 5 + 3; // Tamanho da palavra entre 3 e 7
+        for (int j = 0; j < wordLength; j++) {
+            word += characters[rand() % characters.size()];
+        }
+        words.push_back(word);
+    }
+    return words;
+}
+
+void testBSTPerformance(int volume) {
+    BST bst;
+    vector<string> words = generateRandomWords(volume);
+    
+    // TEMPO DE INSERÇÃO
+    auto start = high_resolution_clock::now();
+    for (const auto& word : words) {
+        bst.insert(word);
+    }
+    auto end = high_resolution_clock::now();
+    auto insertionDuration = duration_cast<milliseconds>(end - start);
+    cout << "Tempo de inserção para " << volume << " palavras: " 
+         << insertionDuration.count() << " ms" << endl;
+
+    // TEMPO DE BUSCA
+    start = high_resolution_clock::now();
+    for (const auto& word : words) {
+        bst.search(word);
+    }
+    end = high_resolution_clock::now();
+    auto searchDuration = duration_cast<milliseconds>(end - start);
+    cout << "Tempo de busca para " << volume << " palavras: " 
+         << searchDuration.count() << " ms" << endl;
+
+    // TEMPO DE BUSCA (PALAVRAS INEXISTENTES)
+    start = high_resolution_clock::now();
+    for (int i = 0; i < 100; i++) { // Buscar 100 palavras que não existem
+        string nonexistentWord = "nonexistent" + to_string(i);
+        bst.search(nonexistentWord);
+    }
+    end = high_resolution_clock::now();
+    auto searchNonexistentDuration = duration_cast<milliseconds>(end - start);
+    cout << "Tempo de busca de palavras inexistentes: " 
+         << searchNonexistentDuration.count() << " ms" << endl;
+}

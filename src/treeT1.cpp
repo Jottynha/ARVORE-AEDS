@@ -100,3 +100,24 @@ void compareTrees(Node* unbalancedTree, Node* balancedTree) {
         cout << "A árvore mais equilibrada tem um nível menor, otimizando o tempo de operação." << endl;
     }
 }
+
+int altura(Node* node) {
+    if (node == nullptr) return 0;
+    return 1 + std::max(altura(node->left), altura(node->right));
+}
+
+void sugerirRotacoes(Node* node) {
+    if (node == nullptr) return;
+    int alturaEsquerda = altura(node->left);
+    int alturaDireita = altura(node->right);
+    // Sugerir rotação à direita se a subárvore esquerda for mais profunda
+    if (alturaEsquerda > alturaDireita + 1) {
+        std::cout << "Sugestão: Rotação à direita em torno do nó '" << node->data << "' para reduzir a profundidade.\n";
+    }
+    // Sugerir rotação à esquerda se a subárvore direita for mais profunda
+    else if (alturaDireita > alturaEsquerda + 1) {
+        std::cout << "Sugestão: Rotação à esquerda em torno do nó '" << node->data << "' para reduzir a profundidade.\n";
+    }
+    sugerirRotacoes(node->left);
+    sugerirRotacoes(node->right);
+}

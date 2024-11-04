@@ -5,7 +5,9 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <chrono> 
 
+using namespace std::chrono;
 using namespace std;
 
 struct No {  // Renomeado de Node para No
@@ -35,5 +37,7 @@ private:
 };
 
 void loadWordsFromFile(BST& tree, const string& filename);
+vector<string> generateRandomWords(int numWords);
+void testBSTPerformance(int volume) ;
 
 #endif
